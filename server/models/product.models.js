@@ -4,9 +4,21 @@ const mongoose = require('mongoose');
 // the schema - the rules that the entries in the db must follow
 const ProductSchema = new mongoose.Schema(
 {
-    title: {type: String},
-    price: {type: Number},
-    description: {type: String},
+    title: {
+        type: String,
+        required: [true, "Title is required"],
+        minlength: [5, "Title must be ast least 5 characters long"]
+    },
+    price: {
+        type: Number,
+        required: [true, "Price is required"],
+        minlength: [1, "Price must be ast least 1 characters long"]
+    },
+    description: {
+        type: String,
+        required: [true, "Description is required"],
+        minlength: [10, "Description must be ast least 10 characters long"]
+    },
 }, {timestamps: true});
 
 // const JokeSchema = new mongoose.Schema({
