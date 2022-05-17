@@ -9,7 +9,7 @@ const Product = require("../models/product.models")
 // READ ALL
 module.exports.findAllProducts = (req, res) => {
     // use the model to execute a query
-    Product.find()
+    Product.find({})
         .then(allDaProducts => {
             console.log(allDaProducts);
             // IMPORTANT what we return here is what we will receive in REACT!
@@ -22,20 +22,9 @@ module.exports.findAllProducts = (req, res) => {
 module.exports.findOneProduct = (req, res) => {
     // /api/products/:id
     Product.findOne({ _id: req.params.id })
-        .then(oneSingleProduct => res.json({ product: oneSingleProduct }))
+        .then(oneSingleProduct => res.json(oneSingleProduct))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
-
-// // READ RANDOM
-// module.exports.findRandomProduct = (req, res) => {
-//     // /api/products/random
-//     Product.find()
-//     .then(products => {
-//         let randomProduct=Math.floor(Math.random() * products.length);
-//         res.json({product:products[randomProduct]});
-//     })
-//     .catch(err => res.json({message: 'Something went wrong', error: err}));
-// }
 
 
 // CREATE
@@ -53,7 +42,7 @@ module.exports.updateExistingProduct = (req, res) => {
         req.body,
         { new: true, runValidators: true }
     )
-        .then(updatedProduct => res.json({ product: updatedProduct }))
+        .then(updatedProduct => res.json(updatedProduct))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 

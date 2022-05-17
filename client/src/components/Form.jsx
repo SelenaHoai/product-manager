@@ -27,32 +27,18 @@ const Form = (props) => {
         // match the post route with the SERVER ROUTE
         axios.post("http://localhost:8000/api/products/new", newProduct)
         .then(res => {
-            console.log("SUCCESS", res.data);
+            console.log("SUCCESS", res.data)
+            props.setAllDaProducts([...props.allDaProducts,newProduct]);
         })
         .catch(err => {
             console.log("ERROR", err);
         })
     }
     
-    // axios.get("http://localhost:8000/api/products")
-    // .then(res => {
-    //     console.log("SUCCESS", res.data);
-    //     this.setState({events: res.data})
-    // })
-    // .catch(err => {
-    //     console.log("ERROR", err);
-    // })
 
     return (
         <div>
-
             <hr />
-            <p>
-                title: {JSON.stringify(title)}<br/>
-                price: {JSON.stringify(price)}<br/>
-                description: {JSON.stringify(description)}
-            </p>
-
             <div>
                 <form onSubmit={createProduct}>
                     <div>
