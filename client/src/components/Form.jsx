@@ -55,9 +55,15 @@ const Form = (props) => {
 
             <div>
                 <form onSubmit={createProduct}>
-                    Title: <input onChange={(e) =>setTitle(e.target.value)} value={title}/> <br />
-                    Price: <input type="number" onChange={(e) =>setPrice(e.target.value)} value={price} style={{marginTop:5}}/><br />
-                    Description: <input onChange={(e) =>setDescription(e.target.value)} value={description} style={{marginTop:5}}/><br />
+                    <div>
+                        Title: <input onChange={(e) =>setTitle(e.target.value)} value={title}/> <br />
+                    </div>
+                    <div style={{marginTop:5}}>
+                        Price: <input type="number" onChange={(e) =>setPrice(e.target.value)} value={price}/><br />
+                    </div>
+                    <div style={{marginTop:5}}>
+                        Description: <input onChange={(e) =>setDescription(e.target.value)} value={description}/><br />
+                    </div>
                     <button style={{padding:5, marginTop:5, fontSize:15}}>Create Product</button>
                 </form>
             </div>

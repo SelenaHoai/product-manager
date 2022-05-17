@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Form from '../components/Form';
-import Results from '../components/Results'
+import Productlist from '../components/Productlist'
 import axios from 'axios';
 
 
@@ -21,7 +21,7 @@ export default () => {
     return (
         <div>
             <Form/>
-            <Results allDaProducts = {allDaProducts}/>
+            <Productlist allDaProducts = {allDaProducts}/>
         </div>
     )
 }
