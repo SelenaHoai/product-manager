@@ -5,7 +5,7 @@ import {Link, useNavigate} from 'react-router-dom'
 
     
 const Detail = (props) => {
-    const [product, setProduct] = useState(null)
+    const [product, setProduct] = useState({})
     const { id } = useParams();
     const navigate = useNavigate();
     
@@ -21,18 +21,19 @@ const Detail = (props) => {
     }
     
     return (
-            product ?
+            // product ?
             <div> 
                 <p>Title: {product.title}</p>
                 <p>Price: ${product.price}</p>
                 <p>Description: {product.description}</p>
                 <button onClick={handleBack}>BACK BUTTON</button>
-                
-            </div> : (
+            </div>
+            /* </div> : (
             <div>
                 <p> loading in process.. </p>
                 <button onClick={handleBack}>BACK BUTTON</button>        
-            </div>)
+            </div>) */
+
     ) 
 
 

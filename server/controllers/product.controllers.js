@@ -31,7 +31,7 @@ module.exports.findOneProduct = (req, res) => {
 module.exports.createNewProduct = (req, res) => {
     // db.products.insert(...)
     Product.create(req.body)
-    .then(newlyCreatedProduct => res.json({product: newlyCreatedProduct}))
+    .then(newlyCreatedProduct => res.json(newlyCreatedProduct))
     .catch(err => res.json({message: 'Something went wrong', error: err}));
 }
 

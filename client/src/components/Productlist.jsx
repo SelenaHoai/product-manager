@@ -19,13 +19,12 @@ const Productlist = (props) => {
         <div>{
             props.allDaProducts.map((product) => {
                 return ( 
-                <div key={product._id}>
-                    <div style={{margin:5, fontSize:18}}>
-                        <Link to={`/products/${product._id}`}>{product.title}</Link> &nbsp;
-                        <Link to={`/products/update/${product._id}`}>Edit</Link> &nbsp;
-                        <button onClick={(e) => {deleteProduct(product._id)}}>Delete</button>
+                <div key={product._id} style={{margin:5, fontSize:18}}>
 
-                    </div>
+                    <Link to={`/products/${product._id}`}>{product.title}</Link> &nbsp;
+                    <Link to={`/products/update/${product._id}`}>Edit</Link> &nbsp;
+                    <button onClick={(e) => {deleteProduct(product._id)}}>Delete</button>
+
                 </div>
                 )
             })
