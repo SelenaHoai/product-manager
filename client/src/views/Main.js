@@ -4,7 +4,6 @@ import Form from '../components/Form';
 import Productlist from '../components/Productlist'
 
 
-
 export default () => {
     const [allDaProducts, setAllDaProducts] = useState([]);
 

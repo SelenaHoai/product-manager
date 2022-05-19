@@ -2,7 +2,6 @@ import './App.css';
 import Main from './views/Main';
 import Detail from './views/Detail';
 import Update from './views/Update';
-
 import {Routes, Route} from 'react-router-dom';
 
 
